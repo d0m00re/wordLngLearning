@@ -1,8 +1,8 @@
 import {IWordList} from 'shared';
 
 let data : IWordList = {
-    theme : 'Animal',
-    description : 'Country word list',
+    theme : 'Tree',
+    description : 'Tree word list',
     img : '',
     wordList : [
     {"origin":["Tortue"],"translation":["Turtle"]},

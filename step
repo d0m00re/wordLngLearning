@@ -1,0 +1,13 @@
+shared lib :
+
+* create shared
+npm init -y 
+
+    "build" : "tsc index.ts -d"
+
+
+include typing -d
+
+go our main project an run npm install :
+
+npm install /home/jacklapiquette/learningEnglishReactNativeMinimalApp/wordLngLearning/shared

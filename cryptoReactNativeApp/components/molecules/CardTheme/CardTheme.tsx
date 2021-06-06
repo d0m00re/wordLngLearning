@@ -2,10 +2,17 @@ import React, {useState, useEffect} from 'react';
 
 import {Text,StyleSheet,Button,View, Dimensions} from 'react-native';
 
-interface ICategorie {
+interface ICategorie2 {
     uuid : string;
     categorie : string;
     description: string;
+}
+
+interface ICategorie {
+    uuid : string;
+    theme : string;
+    description : string; 
+
 }
 
 interface IPropsCard {
@@ -15,7 +22,7 @@ interface IPropsCard {
 function Card({theme} : IPropsCard) {
     return (
             <View style={styles.view}>
-                <Text style={styles.title}>{theme.categorie}</Text>
+                <Text style={styles.title}>{theme.theme}</Text>
                 <Text style={styles.description}>{theme.description}</Text>
             </View>
     );

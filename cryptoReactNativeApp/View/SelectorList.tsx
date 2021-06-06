@@ -14,12 +14,23 @@ interface ICategorie {
     description: string;
 }
 
+interface ICategorie2 {
+    uuid : string;
+    theme : string;
+    description : string; 
+
+}
+
+const getAllThemeReq = 'api/v1/theme';
+
+
 function SelectorList({} : Props)  {
-    const [themes, setThemes] = useState<ICategorie[]>([]);
+    const [themes, setThemes] = useState<ICategorie2[]>([]);
  
     const getTheme = () => {
+        
         console.log('Get theme')
-        fetch('http://192.168.1.11:8000/api/v1/themes')
+        fetch(`http://192.168.1.11:8000/${getAllThemeReq}`)
         .then(response =>response.json())
         .then(responseJson => {
             setThemes(responseJson);
@@ -28,6 +39,7 @@ function SelectorList({} : Props)  {
             console.log('error')
             console.log(error)
         });
+        
     }
 
     useEffect(() => {
@@ -36,11 +48,11 @@ function SelectorList({} : Props)  {
 
     return (
         <View>
-            <Text style={styles.mainTitle}>Selector word list theme</Text>
+            <Text style={styles.mainTitle}>Select word list theme</Text>
             <View style={styles.containerTheme}>
             <ScrollView>
             {themes !== null && 
-                themes.map(elem => <CardTheme theme = {elem} />)
+                themes.map(elem => <CardTheme key={elem.theme} theme = {elem} />)
             }
             </ScrollView>
 

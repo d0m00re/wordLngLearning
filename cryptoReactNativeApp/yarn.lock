@@ -6006,6 +6006,10 @@
   dependencies:
     "kind-of" "^6.0.2"
 
+"shared@file:../shared":
+  "resolved" "file:../shared"
+  "version" "1.1.0"
+
 "shebang-command@^1.2.0":
   "integrity" "sha1-RKrGW2lbAzmJaMOfNj/uXer98eo="
   "resolved" "https://registry.npmjs.org/shebang-command/-/shebang-command-1.2.0.tgz"

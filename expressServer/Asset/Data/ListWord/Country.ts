@@ -1,7 +1,7 @@
 import {IWordList} from 'shared';
 
 let data : IWordList = {
-    theme : 'Animal',
+    theme : 'Country',
     description : 'Country word list',
     img : '',
     wordList : [

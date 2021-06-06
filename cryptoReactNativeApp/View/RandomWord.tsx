@@ -23,6 +23,11 @@ const checkValidTranslation = (resp: string, possibilities: string[]) => {
 
 //function RandomWord({valid, setValid, wordDesc} : Props) {
 
+/*
+data fewtch
+*/
+
+
 function RandomWord({ }: Props) {
     const [valid, setValid] = useState<boolean | null>(null);
     const [currentText, setCurrentText] = useState('');
@@ -38,6 +43,7 @@ function RandomWord({ }: Props) {
             },
 
         } 
+        
         fetch('http://192.168.1.11:8000/api/v1/word/random')
             .then(response => response.json())
             .then(responseJson => {
@@ -47,7 +53,8 @@ function RandomWord({ }: Props) {
                 console.log('error')
             });
             setValid(false);
-    };
+        
+        };
 
     useEffect(() => {
         getNewRandomWord();
