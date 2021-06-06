@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { C_FULL_ADDR } from './../Constant/Server';
 import { Text, StyleSheet, Button, View, TextInput } from 'react-native';
+import ApiNetworkService from '../ApiAdapter/ApiNetworkService';
+
 
 interface IWordDesc {
     origin: string[];
@@ -33,28 +33,10 @@ function RandomWord({ }: Props) {
     const [currentText, setCurrentText] = useState('');
     const [wordDesc, setWordDesc] = useState<IWordDesc | undefined>(undefined);
 
-
-
     const getNewRandomWord = () => {
-        const opt = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-
-        } 
-        
-        fetch('http://192.168.1.11:8000/api/v1/word/random')
-            .then(response => response.json())
-            .then(responseJson => {
-                setWordDesc(responseJson);
-            })
-            .catch(error => {
-                console.log('error')
-            });
-            setValid(false);
-        
-        };
+        ApiNetworkService.getRandomWord()
+        setValid(false);
+    };
 
     useEffect(() => {
         getNewRandomWord();

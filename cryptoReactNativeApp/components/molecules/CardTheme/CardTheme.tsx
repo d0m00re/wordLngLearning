@@ -16,12 +16,13 @@ interface ICategorie {
 }
 
 interface IPropsCard {
-    theme : ICategorie
+    theme : ICategorie,
+    onClick : () => any
 };
 
-function Card({theme} : IPropsCard) {
+function Card({theme, onClick} : IPropsCard) {
     return (
-            <View style={styles.view}>
+            <View style={styles.view} onStartShouldSetResponder={onClick}>
                 <Text style={styles.title}>{theme.theme}</Text>
                 <Text style={styles.description}>{theme.description}</Text>
             </View>

@@ -6,19 +6,18 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 
 interface Props {
-
+    navigation : any
 };
 //        <FontAwesome5 name={'comments'} solid />;
 
-function Home({} : Props) {
+function Home({navigation} : Props) {
     return (
     <View>
         <Text>Learn English word</Text>
-        <FontAwesome5 name={'comments'} solid />
-        <FontAwesome5 name={'comments'} solid />
-        <FontAwesome5 name={'comments'} solid />
-        <FontAwesome5 name={'comments'} solid />
-        <FontAwesome5 name={'comments'} solid />
+        <Button
+        title="Go to About Screen"
+        onPress={() => navigation.navigate("RandomWordList", {theme : 'Apple'})} // We added an onPress event which would navigate to the About screen
+      />
         <FontAwesome5 name={'comments'} solid />
 
     </View>
